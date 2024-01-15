@@ -41,7 +41,7 @@ const Header = () => {
               href='#'
               className='lg:hover:text-[#f8f8f8] text-gray-500 block font-semibold text-[15px]'
             >
-              Team
+              Create news
             </a>
           </li>
           <li className='max-lg:border-b max-lg:py-2 px-3 max-lg:rounded'>
@@ -49,7 +49,7 @@ const Header = () => {
               href='#'
               className='lg:hover:text-[#f8f8f8] text-gray-500 block font-semibold text-[15px]'
             >
-              Feature
+              År 1
             </a>
           </li>
           <li className='max-lg:border-b max-lg:py-2 px-3 max-lg:rounded'>
@@ -57,7 +57,7 @@ const Header = () => {
               href='#'
               className='lg:hover:text-[#f8f8f8] text-gray-500 block font-semibold text-[15px]'
             >
-              Blog
+              År 2
             </a>
           </li>
           <li className='max-lg:border-b max-lg:py-2 px-3 max-lg:rounded'>
@@ -65,7 +65,7 @@ const Header = () => {
               href='#'
               className='lg:hover:text-[#f8f8f8] text-gray-500 block font-semibold text-[15px]'
             >
-              About
+              Lärare
             </a>
           </li>
           <li className='max-lg:border-b max-lg:py-2 px-3 max-lg:rounded'>
@@ -73,7 +73,7 @@ const Header = () => {
               href='#'
               className='lg:hover:text-[#f8f8f8] text-gray-500 block font-semibold text-[15px]'
             >
-              Contact
+              Lägg till +
             </a>
           </li>
         </ul>
