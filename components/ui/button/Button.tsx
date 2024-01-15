@@ -18,7 +18,7 @@ type LookupObject<T extends ButtonPropsKey, U = string> = Record<
 >;
 
 const baseClasses =
-  "font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:hover:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-400 active:translate-y-px disabled:active:translate-y-0";
+  "font-semibold mx-1 lg:mx-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:hover:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-400 active:translate-y-px disabled:active:translate-y-0";
 
 const toneClasses: LookupObject<
   ButtonProps["tone"],
@@ -29,7 +29,7 @@ const toneClasses: LookupObject<
     light:
       "bg-sky-200 text-sky-900 hover:bg-sky-300 focus-visible:ring-sky-500",
     bordered:
-      "outline outline-2 outline-sky-500 hover:bg-sky-200 focus-visible:ring-sky-500 dark:text-white dark:hover:text-black",
+      "outline outline-2 font-bold text-black border-2 border-[#ff4040] bg-[#fafafa] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-[#f8f8f8]",
   },
   danger: {
     bold: "bg-rose-400 hover:bg-rose-500 focus-visible:ring-rose-500",
@@ -62,8 +62,8 @@ const shapeClasses: LookupObject<ButtonProps["shape"]> = {
 
 const sizeClasses: Record<NonNullable<ButtonProps["size"]>, string> = {
   sm: "p-2 text-sm",
-  md: "px-4 py-3 text-base",
-  lg: "px-8 py-4 text-lg",
+  md: "px-4 py-2 text-sm",
+  lg: "px-8 py-4 text-base",
 };
 
 const loadingClasses =

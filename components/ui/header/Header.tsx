@@ -1,16 +1,14 @@
 import React from 'react';
+import { Button } from '../button/Button';
 
 const Header = () => {
   return (
     <header className='w-screen shadow-md py-4 px-4 sm:px-10 bg-zinc-900 font-[sans-serif] h-[80px]'>
       <div className='flex flex-wrap items-center justify-between gap-5 relative'>
         <div className='flex lg:order-1 max-sm:ml-auto'>
-          <button className='px-4 py-2 text-sm rounded-full font-bold text-black border-2 border-[#ff4040] bg-[#fafafa] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-[#f8f8f8]'>
-            Login
-          </button>
-          <button className='px-4 py-2 text-sm rounded-full font-bold text-black border-2 border-[#ff4040] bg-[#fafafa] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-[#f8f8f8] ml-3'>
-            Sign up
-          </button>
+          <Button size='md' impact='bordered' shape='pill'>Login</Button>
+          <Button size='md' impact='bordered' shape='pill'>SignUp</Button>
+          {/* Hamburger menu -  */}
           <button id='toggle' className='lg:hidden ml-7'>
             <svg
               className='w-7 h-7'
