@@ -3,16 +3,24 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background: 255, 255, 255;  
+}
+
+@layer utilities {
+  .dark-gradient {
+    background: linear-gradient(180deg, #000000 0%, #38393D 100%);
+  }
+  .green-gradient {
+    background: linear-gradient(240deg, rgba(79,87,66,1)  0%, rgba(44,46,43,1) 100%);
+  }
+  .dark-green-gradient {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(79,87,66,1) 35%, rgba(44,46,43,1) 100%);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: 22, 24, 28;
   }
 }
 
@@ -25,3 +33,5 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+

@@ -1,4 +1,13 @@
 import type { Config } from 'tailwindcss'
+import defaultTheme from 'tailwindcss/defaultTheme';
+
+export const colors = {
+  darkjungle: '#1D1E22',
+  green: {
+    light: '#3DBDA7',
+    dull: '#067D71',
+  },
+}
 
 const config: Config = {
   content: [
@@ -8,6 +17,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        primary: ['Inter', ...defaultTheme.fontFamily.sans],
+      },
+      
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
