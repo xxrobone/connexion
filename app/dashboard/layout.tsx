@@ -8,13 +8,15 @@ export const metadata: Metadata = {
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <body>
-      <Header />
-      <div className='flex'>
+    <main className='flex'>
+      <div>
         <Sidebar />
+      </div>
+      <div className='flex flex-col relative'>
+        <Header />
         {children}
       </div>
-    </body>
+    </main>
   );
 };
 
