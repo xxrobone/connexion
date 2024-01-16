@@ -5,7 +5,8 @@ import CustomLink from '../custom-link/CustomLink';
 
 const Header = () => {
   return (
-    <header className='w-screen shadow-md py-4 px-4 sm:px-10 bg-zinc-900 font-[sans-serif] h-[80px]'>
+    <header className='w-screen shadow-md pl-0 pr-4 sm:pr-10 bg-black font-[sans-serif] h-[80px] flex justify-between'>
+      <CustomLink  href='/' className='font-bold bg-[red] h-full w-fit px-8 grid place-content-center text-white'>Danscenter Fryshuset</CustomLink>
       <div className='flex flex-wrap items-center justify-between gap-5 relative'>
         <div className='flex lg:order-1 max-sm:ml-auto'>
           <Button size='md' impact='bordered' shape='pill'>

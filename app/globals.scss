@@ -7,14 +7,11 @@
 }
 
 @layer utilities {
-  .dark-gradient {
-    background: linear-gradient(180deg, #000000 0%, #38393D 100%);
+  .black-gradient {
+    background: linear-gradient(180deg, #000000 0%, #222222 100%);
   }
-  .green-gradient {
-    background: linear-gradient(240deg, rgba(79,87,66,1)  0%, rgba(44,46,43,1) 100%);
-  }
-  .dark-green-gradient {
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(79,87,66,1) 35%, rgba(44,46,43,1) 100%);
+  .white-gradient {
+    background: linear-gradient(240deg, rgb(255, 255, 255)  0%, rgb(236, 236, 236) 100%);
   }
 }
 
@@ -25,8 +22,11 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(180deg, #fcfcfc 0%, #f7cdc7 100%);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #000;
+  background: linear-gradient(180deg, #fcfcfc 0%, #ffffff 100%);
 }
 
 

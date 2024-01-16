@@ -29,28 +29,28 @@ const toneClasses: LookupObject<
     light:
       "bg-sky-200 text-sky-900 hover:bg-sky-300 focus-visible:ring-sky-500",
     bordered:
-      "outline outline-2 font-bold text-black border-2 border-[#ff4040] bg-[#fafafa] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-[#f8f8f8]",
+      "outline outline-1 font-bold text-black border-[1px] border-[#ff4040] bg-[#fafafa] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-[#f8f8f8]",
   },
   danger: {
     bold: "bg-rose-400 hover:bg-rose-500 focus-visible:ring-rose-500",
     light:
       "bg-rose-200 text-rose-900 hover:bg-rose-300 focus-visible:ring-rose-500",
     bordered:
-      "outline outline-2 outline-rose-500 hover:bg-rose-200 focus-visible:ring-rose-500 dark:text-white dark:hover:text-black",
+      "outline outline-1 outline-rose-500 hover:bg-rose-200 focus-visible:ring-rose-500 dark:text-white dark:hover:text-black",
   },
   warning: {
     bold: "bg-amber-400 hover:bg-amber-500 focus-visible:ring-amber-500",
     light:
       "bg-amber-200 text-amber-900 hover:bg-amber-300 focus-visible:ring-amber-500",
     bordered:
-      "outline outline-2 outline-amber-500 hover:bg-amber-200 focus-visible:ring-amber-500 dark:text-white dark:hover:text-black",
+      "outline outline-1 outline-amber-500 hover:bg-amber-200 focus-visible:ring-amber-500 dark:text-white dark:hover:text-black",
   },
   success: {
     bold: "bg-green-400 hover:bg-green-500 focus-visible:ring-green-500",
     light:
       "bg-green-200 text-green-900 hover:bg-green-300 focus-visible:ring-green-500",
     bordered:
-      "outline outline-2 outline-green-500 hover:bg-green-200 focus-visible:ring-green-500 dark:text-white dark:hover:text-black",
+      "outline outline-1 outline-green-500 hover:bg-green-200 focus-visible:ring-green-500 dark:text-white dark:hover:text-black",
   },
 };
 
