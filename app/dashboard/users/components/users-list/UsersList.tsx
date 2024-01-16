@@ -7,42 +7,42 @@ const mockData = [
     email: 'john.doe@example.com',
     createdAt: '2022-01-15T08:00:00Z',
     role: 'Teacher',
-    status: true,
+    action: true,
   },
   {
     name: 'Jane Smith',
     email: 'jane.smith@example.com',
     createdAt: '2022-02-20T10:30:00Z',
     role: 'Student',
-    status: true,
+    action: true,
   },
   {
     name: 'Bob Johnson',
     email: 'bob.johnson@example.com',
     createdAt: '2022-03-10T14:45:00Z',
     role: 'Student',
-    status: false,
+    action: false,
   },
   {
     name: 'Alice Williams',
     email: 'alice.williams@example.com',
     createdAt: '2022-04-05T12:15:00Z',
     role: 'Teacher',
-    status: true,
+    action: true,
   },
   {
     name: 'Charlie Brown',
     email: 'charlie.brown@example.com',
     createdAt: '2022-05-18T09:20:00Z',
     role: 'Student',
-    status: true,
+    action: true,
   },
   {
     name: 'Eva Davis',
     email: 'eva.davis@example.com',
     createdAt: '2022-06-22T11:00:00Z',
     role: 'Teacher',
-    status: false,
+    action: false,
   },
 ];
 
@@ -65,18 +65,18 @@ const UsersList = () => {
               Role
             </th>
             <th scope='col' className='px-6 py-3'>
-              Status
+             Action
             </th>
           </tr>
         </thead>
         <tbody>
-          {mockData.map(({ name, email, createdAt, role, status }) => (
+          {mockData.map(({ name, email, createdAt, role, action }) => (
             <UserItem
               key={name}
               name={name}
               email={email}
               createdAt={createdAt}
-                  status={status}
+                  action={action}
                   role={role}
             />
           ))}
