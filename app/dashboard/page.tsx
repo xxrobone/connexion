@@ -1,12 +1,11 @@
 import Header from '@/components/ui/header/Header'
-import Sidebar from '@/components/ui/sidebar/Sidebar'
+import Sidebar from '@/app/dashboard/components/ui/sidebar/Sidebar'
 import React from 'react'
 
 const Dashboard = () => {
   return (
-    <div className='flex w-full min-h-screen'>
-      <Sidebar />
-      <Header />
+    <div className="flex min-h-screen flex-col items-center justify-between p-24">
+      hello world
     </div>
   )
 }

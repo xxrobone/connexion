@@ -1,7 +1,6 @@
 import React from 'react';
-import { Button } from '../button/Button';
-import Link from 'next/link';
-import CustomLink from '../custom-link/CustomLink';
+import CustomLink from '@/components/ui/custom-link/CustomLink';
+import { Button } from '@/components/ui/button/Button';
 
 const Header = () => {
   return (
@@ -31,7 +30,7 @@ const Header = () => {
             </svg>
           </button>
         </div>
-       {/*  <ul
+        <ul
           id='collapseMenu'
           className='lg:!flex lg:space-x-5 max-lg:space-y-2 max-lg:hidden max-lg:py-4 max-lg:w-full'
         >
@@ -41,7 +40,7 @@ const Header = () => {
           <CustomLink href='#' title='År 2'></CustomLink>
           <CustomLink href='#' title='Lärare'></CustomLink>
           <CustomLink href='#' title='Lägg till +'></CustomLink>
-        </ul> */}
+        </ul>
       </div>
     </header>
   );
