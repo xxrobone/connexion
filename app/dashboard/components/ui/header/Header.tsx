@@ -4,16 +4,23 @@ import { Button } from '@/components/ui/button/Button';
 
 const Header = () => {
   return (
-    <header className='w-screen shadow-md pl-0 pr-4 sm:pr-10 bg-black font-[sans-serif] h-[80px] flex justify-between'>
-      <CustomLink  href='/' className='font-bold bg-[red] h-full w-fit px-8 grid place-content-center text-white'>Danscenter Fryshuset</CustomLink>
-      <div className='flex flex-wrap items-center justify-between gap-5 relative'>
+    <header className='w-full shadow-md pl-0 pr-4 sm:pr-10 bg-black font-[sans-serif] h-[80px] flex justify-between'>
+      <CustomLink
+        href='/'
+        className='font-bold bg-[red] h-full w-fit px-8 grid place-content-center text-white'
+      >
+        Danscenter Fryshuset
+      </CustomLink>
+      <div className='flex items-center justify-between gap-5 relative w-full'>
         <div className='flex lg:order-1 max-sm:ml-auto'>
-          <Button size='md' impact='bordered' shape='pill'>
-            Login
-          </Button>
-          <Button size='md' impact='bordered' shape='pill'>
-            SignUp
-          </Button>
+          <div className='relative'>
+            <Button size='md' impact='bordered' shape='pill'>
+              Login
+            </Button>
+            <Button size='md' impact='bordered' shape='pill'>
+              SignUp
+            </Button>
+          </div>
           {/* Hamburger menu -  */}
           <button id='toggle' className='lg:hidden ml-7'>
             <svg
@@ -34,7 +41,7 @@ const Header = () => {
           id='collapseMenu'
           className='lg:!flex lg:space-x-5 max-lg:space-y-2 max-lg:hidden max-lg:py-4 max-lg:w-full'
         >
-          <CustomLink href='#' title='Home'></CustomLink>
+           <CustomLink href='#' title='Home'></CustomLink>
           <CustomLink href='#' title='Skapa inlägg'></CustomLink>
           <CustomLink href='#' title='År 1'></CustomLink>
           <CustomLink href='#' title='År 2'></CustomLink>
