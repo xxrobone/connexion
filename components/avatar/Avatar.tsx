@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 type ImageProps = {
     profileImg: string | HTMLImageElement
@@ -6,7 +7,13 @@ type ImageProps = {
 
 const Avatar = ({profileImg}: ImageProps) => {
   return (
-    <Image>Avatar</Image>
+    <Image
+            className="rounded-full"
+            width={112}
+            height={112}
+            src={profileImg}
+            alt="User"
+          />
   )
 }
 
