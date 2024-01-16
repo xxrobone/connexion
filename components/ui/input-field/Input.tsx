@@ -18,14 +18,15 @@ const Input = ({
   handleForm,
 }: InputFieldType) => {
   return (
-    <div className='flex gap-2 border-b'>
-      <label htmlFor={htmlFor}>{labelValue}</label>
-      <input
-        className='focus:outline-none'
+    <div className='flex gap-2 border-none bg-transparent outline-none w-full'>
+      <label htmlFor={htmlFor}></label>
+          <input
+        className='focus:outline-none bg-transparent'
         type={type}
         id={id}
         name={name}
-        onChange={handleForm}
+              onChange={handleForm}
+              placeholder={labelValue}
       />
     </div>
   )

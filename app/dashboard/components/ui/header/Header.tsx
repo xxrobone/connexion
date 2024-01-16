@@ -1,8 +1,9 @@
-'use client'
+'use client';
 import React from 'react';
 import CustomLink from '@/components/ui/custom-link/CustomLink';
 import { Button } from '@/components/ui/button/Button';
 import Navbar from '../navbar/Navbar';
+import SearchBar from '@/components/ui/search-bar/SearchBar';
 
 const Header = () => {
   return (
@@ -15,6 +16,7 @@ const Header = () => {
       </CustomLink>
       <div className='flex items-center justify-between gap-5 relative w-full'>
         <div className='flex lg:order-1 max-sm:ml-auto'>
+          <SearchBar />
           <div className='relative'>
             <Button size='sm' impact='bordered' shape='pill'>
               Login
