@@ -29,7 +29,7 @@ const toneClasses: LookupObject<
     light:
       "bg-sky-200 text-sky-900 hover:bg-sky-300 focus-visible:ring-sky-500",
     bordered:
-      "outline outline-1 font-bold text-black border-[1px] border-[#ff4040] bg-[#fafafa] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-[#f8f8f8]",
+      "outline outline-1 outline-transparent font-bold text-[#ededed] border-[1px] border-[#ff4040] bg-transparent transition-all ease-in-out duration-300 hover:bg-transparent hover:text-white hover:border-[#fafafa]",
   },
   danger: {
     bold: "bg-rose-400 hover:bg-rose-500 focus-visible:ring-rose-500",
@@ -61,7 +61,7 @@ const shapeClasses: LookupObject<ButtonProps["shape"]> = {
 };
 
 const sizeClasses: Record<NonNullable<ButtonProps["size"]>, string> = {
-  sm: "p-2 text-sm",
+  sm: "py-1 px-3 text-sm",
   md: "px-4 py-2 text-sm",
   lg: "px-8 py-4 text-base",
 };

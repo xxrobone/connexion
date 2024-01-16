@@ -17,27 +17,27 @@ const SidebarMenuItems: SidebarMenuItem[] = [
   icon: <MdDashboard />
   },
   {
-    href: '/Users',
+    href: '/dashboard/users',
     title: 'Users',
     icon: <MdSupervisedUserCircle />,
   },
   {
-    href: '/year1',
+    href: '/dashboard/year1',
     title: 'År1',
     icon: <PiStudent  />,
   },
   {
-    href: '/year2',
+    href: '/dashboard/year2',
     title: 'År2',
     icon: <PiStudent  />,
   },
   {
-    href: '/teachers',
+    href: '/dashboard/teachers',
     title: 'Lärare',
     icon: <FaUserTie />,
   },
   {
-    href: '/add-user',
+    href: '/dashboard/add-user',
     title: 'Lägg till',
     icon: <MdPersonAddAlt />,
   },
