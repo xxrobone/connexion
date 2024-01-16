@@ -1,9 +1,12 @@
+import Avatar from '@/components/avatar/Avatar';
+import NextImage from '@/components/image-component/ImageComponent';
 import { Button } from '@/components/ui/button/Button';
 import CustomLink from '@/components/ui/custom-link/CustomLink';
 import React from 'react';
-import { VscTrash } from "react-icons/vsc";
+import { VscTrash } from 'react-icons/vsc';
 
 interface UserItemProps {
+  profileImg: string;
   name: string;
   email: string;
   createdAt: string;
@@ -11,13 +14,24 @@ interface UserItemProps {
   action: boolean;
 }
 
-const UserItem = ({ name, email, createdAt, role, action }: UserItemProps) => {
+const UserItem = ({
+  name,
+  email,
+  createdAt,
+  role,
+  action,
+  profileImg,
+}: UserItemProps) => {
   return (
     <tr className='bg-white dark:bg-gray-800 border-b-[1px] border-[#888]'>
       <th
         scope='row'
-        className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white hover:bg-gray-400 cursor-pointer'
+        className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white hover:bg-gray-400 cursor-pointer flex items-center'
       >
+        <NextImage width={32} height={32} className='w-8 h-8 rounded-full object-cover p-1 shadow-lg mr-2' src={profileImg} alt='user' />
+       {/*  <span className='w-8 h-8 object-cover'>
+          <Avatar profileImg={profileImg} />
+        </span> */}
         {name}
       </th>
       <td className='px-6 py-4 hover:bg-zinc-800 cursor-pointer'>{email}</td>
@@ -28,7 +42,7 @@ const UserItem = ({ name, email, createdAt, role, action }: UserItemProps) => {
       <td className='px-6 py-4 cursor-pointer flex'>
         <CustomLink href='' title='view' />
         <Button tone='danger' size='sm'>
-        <VscTrash className='text-black'/>
+          <VscTrash className='text-black' />
         </Button>
       </td>
     </tr>
