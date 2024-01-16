@@ -9,7 +9,7 @@ type InputFieldType = {
     handleForm: (e: ChangeEvent<HTMLInputElement>) => void
   }
 
-const InputField = ({
+const Input = ({
   htmlFor,
   id,
   labelValue,
@@ -31,4 +31,4 @@ const InputField = ({
   )
 }
 
-export default InputField
+export default Input
