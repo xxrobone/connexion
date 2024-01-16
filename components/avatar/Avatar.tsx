@@ -9,8 +9,8 @@ const Avatar = ({profileImg}: ImageProps) => {
   return (
     <Image
             className="rounded-full"
-            width={112}
-            height={112}
+            width={36}
+            height={36}
             src={profileImg}
             alt="User"
           />

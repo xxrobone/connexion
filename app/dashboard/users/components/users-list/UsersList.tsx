@@ -3,6 +3,7 @@ import UserItem from '../user-item/UserItem';
 
 const mockData = [
   {
+    profileImg: '/images/robone1.jpg',
     name: 'John Doe',
     email: 'john.doe@example.com',
     createdAt: '2022-01-15T08:00:00Z',
