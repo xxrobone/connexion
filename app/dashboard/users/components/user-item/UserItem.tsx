@@ -23,16 +23,12 @@ const UserItem = ({
   profileImg,
 }: UserItemProps) => {
   return (
-    <tr className='bg-white dark:bg-gray-800 border-b-[1px] border-[#888]'>
+    <tr className='bg-white dark:bg-gray-800 border-b-[1px] border-[#888] flex items-center'>
       <th
         scope='row'
-        className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white hover:bg-gray-400 cursor-pointer flex items-center'
+        className='flex items-center gap-4 px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white hover:bg-gray-400 cursor-pointer'
       >
         <Avatar profileImg={profileImg} />
-        <NextImage width={32} height={32} className='w-8 h-8 rounded-full object-cover p-1 shadow-lg mr-2' src={profileImg} alt='user' />
-       {/*  <span className='w-8 h-8 object-cover'>
-          <Avatar profileImg={profileImg} />
-        </span> */}
         {name}
       </th>
       <td className='px-6 py-4 hover:bg-zinc-800 cursor-pointer'>{email}</td>

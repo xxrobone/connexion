@@ -14,7 +14,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        primary:' var(--font-roboto)',
+        primary: ' var(--font-roboto)',
+        alt: 'var(--font-space-grotesk)',
       },
       
       backgroundImage: {

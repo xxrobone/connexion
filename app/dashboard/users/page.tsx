@@ -10,7 +10,7 @@ const Users = async () => {
   console.log(users)
   return (
     <div className='h-full bg-gray-800 relative'>
-      {/* <UsersList /> */}
+      <UsersList />
      {/*  <AddUser /> */}
     </div>
   );
