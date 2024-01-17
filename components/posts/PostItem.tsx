@@ -21,7 +21,7 @@ interface PostItemProps {
           <div>
             <h2 className='text-2xl font-bold leading-8 tracking-tight'>
               <a
-                className='text-gray-900 dark:text-gray-100'
+                className='text-gray-900 dark:text-black drop-shadow-[1px_2px_1px_rgba(255,64,64.25)]'
                 href='/blog/release-of-tailwind-nextjs-starter-blog-v2.0'
               >
                {title}
@@ -31,17 +31,17 @@ interface PostItemProps {
             {tags.map((tag, index) => (
                 <a
                   key={index}
-                  className='mr-3 text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 font-alt'
+                  className='group mr-3 p-1 rounded-sm text-sm font-medium uppercase text-primary-500 hover:text-white hover:bg-zinc-800 dark:hover:text-primary-400 font-alt transition-all duration-300'
                   href={`/tags/${tag.toLowerCase()}`}
                 >
-                  {tag}
+                    {tag}
+                    <span className='block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-[#ff4040] opacity-50'></span>
                 </a>
               ))}
             </div>
           </div>
-          <div className='prose max-w-none text-gray-500 dark:text-gray-400'>
-                      Tyvärr så är Bettan borta och vi blir tvugna att ta in vikarie 
-                      Vikarie blir LiseLotte som kommer köra modern contemporary ballett med pom poms
+          <div className='prose max-w-none text-gray-500 dark:text-gray-600'>
+                     {desc}
           </div>
         </div>
       </article>
