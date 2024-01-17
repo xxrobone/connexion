@@ -1,13 +1,13 @@
-import { ChangeEvent } from 'react'
+import { ChangeEvent } from 'react';
 
 type InputFieldType = {
-    htmlFor: string
-    id: string
-    labelValue: string
-    name: string
-    type: string
-    handleForm: (e: ChangeEvent<HTMLInputElement>) => void
-  }
+  htmlFor: string;
+  id: string;
+  labelValue: string;
+  name: string;
+  type: string;
+  handleForm: (e: ChangeEvent<HTMLInputElement>) => void;
+};
 
 const Input = ({
   htmlFor,
@@ -20,16 +20,16 @@ const Input = ({
   return (
     <div className='flex gap-2 border-none bg-transparent outline-none w-full'>
       <label htmlFor={htmlFor}></label>
-          <input
+      <input
         className='focus:outline-none bg-transparent'
         type={type}
         id={id}
         name={name}
-              onChange={handleForm}
-              placeholder={labelValue}
+        onChange={handleForm}
+        placeholder={labelValue}
       />
     </div>
-  )
-}
+  );
+};
 
-export default Input
+export default Input;
