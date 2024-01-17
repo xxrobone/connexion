@@ -1,4 +1,5 @@
-import { Document, Schema, model, MongooseError } from 'mongoose';
+import { Document, Schema, model, MongooseError} from 'mongoose';
+import mongoose from "mongoose";
 import bcrypt from 'bcrypt';
 
 interface IUser extends Document {
@@ -6,7 +7,8 @@ interface IUser extends Document {
   email: string;
   password: string;
   img?: string;
-  role: 'Admin' | 'Teacher' | 'Student';
+    role: 'Admin' | 'Teacher' | 'Student';
+    info: string;
   confirmed: Boolean;
   fullname?: string;
   createdAt: Date;
@@ -62,6 +64,10 @@ const UserSchema = new Schema<IUser>(
       type: String,
       default: 'Student',
     },
+    info: {
+      type: String,
+      required: false,
+    },
     classes: [
       {
         classId: {
@@ -108,8 +114,8 @@ UserSchema.methods.isUserInYear2 = function () {
   return currentYear - startYear === (isInYear2 ? 1 : 0);
 };
 
-const UserModel = model<IUser>('User', UserSchema);
+const User = mongoose.models.User || model<IUser>('User', UserSchema);
 
-export default UserModel;
+export default User;
 export type { IUser };
 

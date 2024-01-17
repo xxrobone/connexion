@@ -8,8 +8,8 @@ interface User {
   email: string;
   password: string;
   phone: string;
-  address: string;
-  isAdmin: boolean;
+  info: string;
+    role: string;
   isActive: boolean;
   img?: string;
 }
@@ -64,12 +64,12 @@ const SingleUserPage = () => {
           <input type="password" name="password" />
           <label>Phone</label>
           <input type="text" name="phone" placeholder={user.phone} />
-          <label>Address</label>
-          <textarea name="address" placeholder={user.address}></textarea>
-          <label>Is Admin?</label>
-          <select name="isAdmin" id="isAdmin" defaultValue={user.isAdmin.toString()}>
-            <option value="true">Yes</option>
-            <option value="false">No</option>
+          <label>Info</label>
+          <textarea name="info" placeholder={user.info}></textarea>
+          <label>Teacher or Student</label>
+          <select name="role" id="role">
+          <option value={'Teacher'}>Teacher</option>
+            <option value={'Student'}>Student</option>
           </select>
           <label>Is Active?</label>
           <select name="isActive" id="isActive" defaultValue={user.isActive.toString()}>
