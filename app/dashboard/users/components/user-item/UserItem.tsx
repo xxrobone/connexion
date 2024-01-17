@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button/Button';
 import CustomLink from '@/components/ui/custom-link/CustomLink';
 import React from 'react';
 import { VscTrash } from 'react-icons/vsc';
-import { CgProfile, CgEyeAlt } from 'react-icons/cg';
+import { CgProfile } from 'react-icons/cg';
 
 interface UserItemProps {
   username: string;
@@ -41,7 +41,7 @@ const UserItem = ({
       <td className='px-6 py-4 cursor-pointer bg-[#f8f8f8] hover:bg-[#dddddd] border-b-2 grid place-content-center'>
         <CustomLink
           href=''
-          title={<CgEyeAlt/ >}
+          title='VIEW'
           className='text-black'
         />
       </td>
