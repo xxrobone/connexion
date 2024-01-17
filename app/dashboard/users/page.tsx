@@ -5,8 +5,8 @@ import AddUser from './add/page';
 const Users = () => {
   return (
     <div className='h-full bg-gray-800 relative'>
-      {/* <UsersList /> */}
-      <AddUser />
+      <UsersList />
+     {/*  <AddUser /> */}
     </div>
   );
 };
