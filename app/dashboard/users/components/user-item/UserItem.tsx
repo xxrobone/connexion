@@ -10,6 +10,7 @@ interface UserItemProps {
   createdAt: string;
   role: string;
   action: boolean;
+  profileImg: string;
 }
 
 const UserItem = ({ name, email, createdAt, role, action, profileImg }: UserItemProps) => {
