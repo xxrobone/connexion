@@ -6,7 +6,7 @@ interface IUser extends Document {
   username: string;
   email: string;
   password: string;
-  img?: string;
+  profileImg?: string;
     role: 'Admin' | 'Teacher' | 'Student';
     info: string;
   confirmed: Boolean;
@@ -55,7 +55,7 @@ const UserSchema = new Schema<IUser>(
       type: String,
       required: false,
     }, */
-    img: {
+    profileImg: {
       type: String,
       default: '',
       required: false,
