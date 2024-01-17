@@ -10,7 +10,7 @@ const CustomLink = (props: ComponentProps<typeof Link>) => {
       {...props}
       className={cn(
         props.className,
-        `group lg:hover:text-[#f8f8f8] text-[#f8f8f8] max-lg:text-white border-transparent font-semibold text-[15px] px-4 py-2 transition-all duration-300 ease-in-out block w-fit`,
+        `group lg:hover:text-[#888] text-[#f8f8f8] max-lg:text-white border-transparent font-semibold text-[15px] px-4 py-2 transition-all duration-300 ease-in-out block w-fit`,
       )}
       href={props.href}
     >

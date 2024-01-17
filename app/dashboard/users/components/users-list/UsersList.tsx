@@ -24,7 +24,10 @@ const UsersList = ({ children }: UserListProps) => {
               Role
             </th>
             <th scope='col' className='px-6 py-3'>
-              Action
+              View
+            </th>
+            <th scope='col' className='px-6 py-3'>
+              Delete
             </th>
           </tr>
         </thead>

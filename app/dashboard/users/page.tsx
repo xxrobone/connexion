@@ -11,7 +11,6 @@ const mockData = [
     email: 'john.doe@example.com',
     createdAt: '2022-01-15T08:00:00Z',
     role: 'Teacher',
-    action: true,
   },
   {
     profileImg: '/images/rob.png',
@@ -19,7 +18,6 @@ const mockData = [
     email: 'jane.smith@example.com',
     createdAt: '2022-02-20T10:30:00Z',
     role: 'Student',
-    action: true,
   },
   {
     profileImg: '/images/rob.png',
@@ -35,7 +33,6 @@ const mockData = [
     email: 'alice.williams@example.com',
     createdAt: '2022-04-05T12:15:00Z',
     role: 'Teacher',
-    action: true,
   },
   {
     profileImg: '/images/rob.png',
@@ -43,7 +40,6 @@ const mockData = [
     email: 'charlie.brown@example.com',
     createdAt: '2022-05-18T09:20:00Z',
     role: 'Student',
-    action: true,
   },
   {
     profileImg: '/images/rob.png',
@@ -63,13 +59,12 @@ const Users = async () => {
     <div className='h-full bg-gray-800 relative'>
       <UsersList>
         {users.map(
-          ({ name, email, createdAt, role, action, profileImg }) => (
+          ({ username, email, createdAt, role, profileImg }, index) => (
             <UserItem
-              key={name}
-              name={name}
+              key={index}
+              username={username}
               email={email}
               createdAt={createdAt}
-              action={action}
               role={role}
               profileImg={profileImg}
             />
