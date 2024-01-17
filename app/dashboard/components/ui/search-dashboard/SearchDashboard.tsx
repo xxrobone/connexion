@@ -5,13 +5,20 @@ import { useDebouncedCallback } from 'use-debounce';
 
 // so trying out this way of doing the search using the next navigation methods
 
-const SearchDashboard = ({ placeholder }: { placeholder: string}) => {
+interface SearchProps {
+    placeholder: string;
+  page?: string | number
+}
+
+const SearchDashboard = ({ placeholder }: SearchProps) => {
   const searchParams = useSearchParams();
   const { replace } = useRouter();
   const pathname = usePathname();
 
   const handleSearch = useDebouncedCallback((e) => {
     const params = new URLSearchParams(searchParams);
+
+    params.set('page', '1');
 
     if (e.target.value) {
       e.target.value.length > 2 && params.set('q', e.target.value);

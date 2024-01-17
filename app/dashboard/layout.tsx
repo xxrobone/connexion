@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <main className='flex w-screen'>
+    <main className='flex w-screen min-h-screen'>
       <div className=''>
         <Sidebar />
       </div>

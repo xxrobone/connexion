@@ -4,6 +4,7 @@ import AddUser from './add/page';
 import { fetchUsers } from '@/lib/data/userData';
 import UserItem from './components/user-item/UserItem';
 import SearchDashboard from '../components/ui/search-dashboard/SearchDashboard';
+import Pagination from '@/components/pagination/Pagination';
 
 const mockData = [
   {
@@ -55,35 +56,44 @@ const mockData = [
 interface UsersProps {
   searchParams: {
     q?: string;
+    page?: string;
   };
 }
 
 const Users = async ({ searchParams }: UsersProps) => {
   const q = searchParams?.q || '';
+  const page = searchParams?.page || '1';
 
-  const users = await fetchUsers(q);
+  const { count, users } = await fetchUsers(q, page);
 
-  console.log(users);
+  /* console.log(users); */
   return (
     <div className='h-full bg-gray-800 relative'>
       <div className='pl-20 pt-20'>
-      <SearchDashboard placeholder='search for users' />
+        <SearchDashboard placeholder='search for users' />
       </div>
       <UsersList>
-        {users.map(
-          ({ username, email, createdAt, role, profileImg }, index) => (
-            <UserItem
-              key={index}
-              username={username}
-              email={email}
-              createdAt={createdAt}
-              role={role}
-              profileImg={profileImg}
-            />
-          ),
+        {users ? (
+          users.map(
+            ({ username, email, createdAt, role, profileImg }, index) => (
+              <UserItem
+                key={index}
+                username={username}
+                email={email}
+                createdAt={createdAt}
+                role={role}
+                profileImg={profileImg}
+              />
+            ),
+          )
+        ) : (
+          <div>No users found</div>
         )}
       </UsersList>
       {/*  <AddUser /> */}
+      <div>
+        <Pagination count={count} />
+      </div>
     </div>
   );
 };
