@@ -5,8 +5,16 @@ type ImageProps = {
   profileImg: string | StaticImageData;
 };
 
-const Avatar = ({ profileImg }: ImageProps) => {
-  return <Image className='rounded-full' width={32} height={32} src={profileImg} alt='User' />;
-};
+const Avatar = ({profileImg}: ImageProps) => {
+  return (
+    <Image
+            className="rounded-full"
+            width={36}
+            height={36}
+            src={profileImg}
+            alt="User"
+          />
+  )
+}
 
 export default Avatar;

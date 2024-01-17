@@ -6,12 +6,12 @@ import React from 'react';
 import { VscTrash } from 'react-icons/vsc';
 
 interface UserItemProps {
-  profileImg: string;
   name: string;
   email: string;
   createdAt: string;
   role: string;
   action: boolean;
+  profileImg: string;
 }
 
 const UserItem = ({
@@ -28,6 +28,7 @@ const UserItem = ({
         scope='row'
         className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white hover:bg-gray-400 cursor-pointer flex items-center'
       >
+        <Avatar profileImg={profileImg} />
         <NextImage width={32} height={32} className='w-8 h-8 rounded-full object-cover p-1 shadow-lg mr-2' src={profileImg} alt='user' />
        {/*  <span className='w-8 h-8 object-cover'>
           <Avatar profileImg={profileImg} />
