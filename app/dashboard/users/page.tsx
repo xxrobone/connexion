@@ -3,6 +3,7 @@ import UsersList from './components/users-list/UsersList';
 import AddUser from './add/page';
 import { fetchUsers } from '@/lib/data/userData';
 import UserItem from './components/user-item/UserItem';
+import SearchDashboard from '../components/ui/search-dashboard/SearchDashboard';
 
 const mockData = [
   {
@@ -51,12 +52,23 @@ const mockData = [
   },
 ];
 
-const Users = async () => {
-  const users = await fetchUsers();
+interface UsersProps {
+  searchParams: {
+    q?: string;
+  };
+}
+
+const Users = async ({ searchParams }: UsersProps) => {
+  const q = searchParams?.q || '';
+
+  const users = await fetchUsers(q);
 
   console.log(users);
   return (
     <div className='h-full bg-gray-800 relative'>
+      <div className='pl-20 pt-20'>
+      <SearchDashboard placeholder='search for users' />
+      </div>
       <UsersList>
         {users.map(
           ({ username, email, createdAt, role, profileImg }, index) => (
