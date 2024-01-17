@@ -49,10 +49,10 @@ const UserSchema = new Schema<IUser>(
       default: false,
       required: true,
     },
-    inviteCode: {
+    /* inviteCode: {
       type: String,
       required: false,
-    },
+    }, */
     img: {
       type: String,
       default: '',
