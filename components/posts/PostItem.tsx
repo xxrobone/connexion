@@ -31,7 +31,7 @@ interface PostItemProps {
             {tags.map((tag, index) => (
                 <a
                   key={index}
-                  className='mr-3 text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400'
+                  className='mr-3 text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 font-alt'
                   href={`/tags/${tag.toLowerCase()}`}
                 >
                   {tag}

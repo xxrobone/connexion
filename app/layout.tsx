@@ -1,10 +1,20 @@
 import type { Metadata } from 'next';
-import { Inter, Roboto } from 'next/font/google';
+import { Inter, Roboto, Space_Grotesk } from 'next/font/google';
 import './globals.scss';
 import Header from '@/components/ui/header/Header';
 import Footer from '@/components/ui/footer/Footer';
 
-const roboto = Roboto({ subsets: ['latin'], weight: ['100', '300', '400', '500', '700', '900'],  style: ['normal', 'italic'], variable: '--font-roboto' });
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['100', '300', '400', '500', '700', '900'],
+  style: ['normal', 'italic'],
+  variable: '--font-roboto',
+});
+const space_grotesk = Space_Grotesk({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-space-grotesk',
+});
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -18,7 +28,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={`${roboto.variable}`}>
+      <body className={`${roboto.variable} ${space_grotesk.variable}`}>
         {children}
         <Footer />
       </body>
