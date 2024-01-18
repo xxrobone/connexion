@@ -1,6 +1,6 @@
-import { ChangeEvent } from 'react';
+import React, { ChangeEvent } from 'react';
 
-type InputFieldType = {
+type TextInputProps = {
   htmlFor: string;
   id: string;
   labelValue: string;
@@ -9,27 +9,27 @@ type InputFieldType = {
   handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
-const Input = ({
+const TextInput: React.FC<TextInputProps> = ({
   htmlFor,
   id,
   labelValue,
   name,
   type,
   handleChange,
-}: InputFieldType) => {
+}: TextInputProps) => {
   return (
     <div className='flex gap-2 border-none bg-transparent outline-none w-full'>
-      <label htmlFor={htmlFor}></label>
+      <label htmlFor={htmlFor}>{labelValue}</label>
       <input
         className='focus:outline-none bg-transparent'
         type={type}
         id={id}
         name={name}
         onChange={handleChange}
-        placeholder={labelValue}
+        placeholder={`Enter ${labelValue}`}
       />
     </div>
   );
 };
 
-export default Input;
+export default TextInput;

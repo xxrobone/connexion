@@ -22,6 +22,11 @@ const SidebarMenuItems: SidebarMenuItem[] = [
     icon: <MdSupervisedUserCircle />,
   },
   {
+    href: '/dashboard/students',
+    title: 'Alla Elever',
+    icon: <PiStudent  />,
+  },
+  {
     href: '/dashboard/year1',
     title: 'År1',
     icon: <PiStudent  />,

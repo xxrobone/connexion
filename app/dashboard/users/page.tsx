@@ -1,7 +1,7 @@
 import React from 'react';
 import UsersList from './components/users-list/UsersList';
 import AddUser from './add/page';
-import { fetchUsers } from '@/lib/data/userData';
+import { fetchUsers, getStudents, getStudentsByClass, getTeachers } from '@/lib/data/userData';
 import UserItem from './components/user-item/UserItem';
 import SearchDashboard from '../components/ui/search-dashboard/SearchDashboard';
 import Pagination from '@/components/pagination/Pagination';
@@ -71,10 +71,11 @@ const Users = async ({ searchParams }: UsersProps) => {
     <div className='h-full bg-gray-800 relative'>
      
       <div className='pl-20 pt-20 flex '>
-        <SearchDashboard placeholder='search for users' /> 
-        <Button tone='alt' impact='bordered' shape='rounded'>Elever år 1</Button>
-        <Button tone='alt' impact='bordered' shape='rounded'>Elever år 2</Button>
-        <Button tone='alt' impact='bordered' shape='rounded'>Lärare</Button>
+        <SearchDashboard placeholder='search for users' />
+        <Button tone='alt' impact='bordered' shape='rounded' className='text-white font-thin'>Alla Elever</Button>
+        <Button tone='alt' impact='bordered' shape='rounded' className='text-white font-thin'>Elever år 1</Button>
+        <Button tone='alt' impact='bordered' shape='rounded' className='text-white font-thin'>Elever år 2</Button>
+        <Button tone='alt' impact='bordered' shape='rounded' className='text-white font-thin'>Lärare</Button>
       </div>
       <UsersList>
         {users ? (

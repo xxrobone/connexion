@@ -2,10 +2,8 @@ import User from "../models/User";
 import ClassModel from "../models/Class";
 import {connectToDB} from '../utils'
 
-// FETCH USERS
-
+// GET USERS
 export const fetchUsers = async (q: string, page:string) => {
-
   const regex = new RegExp(q, "i");
   
   const LIMIT_ITEMS = 5
@@ -21,6 +19,7 @@ export const fetchUsers = async (q: string, page:string) => {
     }
 }
 
+// GET SINGLE USER BY ID
 export const fetchUser = async (id: string) => {
     console.log(id);
     try {
@@ -33,8 +32,8 @@ export const fetchUser = async (id: string) => {
     }
 };
 
+// GET STUDENTS BY CLASS
 export const getStudentsByClass = async (classId: string, page:string) => {
-  
   const LIMIT_ITEMS = 5
     try {
       connectToDB()
@@ -60,8 +59,8 @@ export const getStudentsByClass = async (classId: string, page:string) => {
     }
 }
 
+// GET ALL STUDENTS
 export const getStudents = async (page:string) => {
-  
   const LIMIT_ITEMS = 5
     try {
       connectToDB()
@@ -78,5 +77,25 @@ export const getStudents = async (page:string) => {
     } catch (err) {
         console.log(err)
         throw new Error('Failed to fetch students!')
+    }
+}
+
+
+// GET ALL TEACHERS
+export const getTeachers = async (page:string) => {
+  const LIMIT_ITEMS = 5
+    try {
+      connectToDB()
+      // similar to what I leanred from Staffan Enberg getting all posts but now use it to get all users
+      const count = await User.countDocuments({
+      role: 'Teacher',
+    })
+    const teachers = await User.find({
+      role: 'Teacher',
+    }).limit(LIMIT_ITEMS).skip(LIMIT_ITEMS * (parseInt(page) - 1));
+      return { count, teachers };
+    } catch (err) {
+        console.log(err)
+        throw new Error('Failed to fetch teachers!')
     }
 }
