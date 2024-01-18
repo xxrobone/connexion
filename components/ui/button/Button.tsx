@@ -55,7 +55,7 @@ const toneClasses: LookupObject<
 
 const shapeClasses: LookupObject<ButtonProps['shape']> = {
   square: 'rounded-none',
-  rounded: 'rounded',
+  rounded: 'rounded-md',
   pill: 'rounded-full',
 };
 
