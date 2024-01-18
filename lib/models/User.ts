@@ -8,7 +8,7 @@ interface IUser extends Document {
   password: string;
   profileImg?: string;
     role: 'Admin' | 'Teacher' | 'Student';
-    info: string;
+    desc: string;
   confirmed: Boolean;
   fullname?: string;
   createdAt: Date;
@@ -64,7 +64,7 @@ const UserSchema = new Schema<IUser>(
       type: String,
       default: 'Student',
     },
-    info: {
+    desc: {
       type: String,
       required: false,
     },

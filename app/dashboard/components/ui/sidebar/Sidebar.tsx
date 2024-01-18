@@ -42,7 +42,7 @@ const SidebarMenuItems: SidebarMenuItem[] = [
     icon: <FaUserTie />,
   },
   {
-    href: '/dashboard/add-user',
+    href: '/dashboard/users/add',
     title: 'Lägg till',
     icon: <MdPersonAddAlt />,
   },

@@ -1,24 +1,42 @@
-import User, {IUser} from '../models/User';
+"use server"
+import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
+import User from '../models/User';
+import bcrypt from "bcrypt";
 import { connectToDB } from '../utils';
 
 export const addUser = async (formData: FormData) => {
-    "use server"
-  const { fullname, username, email, password, role, confirmed } =
+  const { fullname, username, email, password, role, desc } =
     Object.fromEntries(formData);
+  // if admin adds student no need for email confirmation
+  const addConfirmed = true
 
   try {
     connectToDB();
+
+    // extracting the password as a string from the formdata
+    const extractedPassword: string = password as string;
+
+    // adding the hashed password 
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(extractedPassword, salt);
+
+    // creating the new user
     const newUser = new User({
       fullname,
       username,
       email,
-      password,
+       password: hashedPassword,
       role,
-      confirmed,
+      confirmed: addConfirmed,
+      desc
     });
     await newUser.save();
   } catch (err) {
     console.log(err);
     throw new Error('Failed to create user');
   }
+
+  revalidatePath("/dashboard/users");
+  redirect("/dashboard/users");
 };

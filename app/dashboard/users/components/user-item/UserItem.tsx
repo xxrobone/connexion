@@ -21,7 +21,7 @@ const UserItem = ({
   role,
   profileImg,
 }: UserItemProps) => {
-  const formattedDate = createdAt.toLocaleString();
+  const formattedDate = createdAt?.toString().slice(4, 16);
   return (
     <tr>
       <td
@@ -38,7 +38,7 @@ const UserItem = ({
         {formattedDate}
       </td>
       <td className='px-6 py-4 hover:bg-zinc-800 cursor-pointer'>{role}</td>
-      <td className='px-6 py-4 cursor-pointer bg-[#f8f8f8] hover:bg-[#dddddd] border-b-2 grid place-content-center'>
+      <td className='px-6 py-4 cursor-pointer  hover:bg-[#dddddd] border-b-2 grid place-content-center'>
         <CustomLink
           href=''
           title='VIEW'
@@ -46,7 +46,7 @@ const UserItem = ({
         />
       </td>
       <td className='px-6 py-4 cursor-pointer'>
-        <Button tone='danger' size='sm'>
+        <Button tone='danger' size='md'>
           <VscTrash className='text-black' />
         </Button>
       </td>

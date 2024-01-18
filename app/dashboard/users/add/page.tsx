@@ -1,11 +1,25 @@
 import React from 'react';
+import { addUser } from '@/lib/actions/actions';
 
 const AddUser: React.FC = () => {
-  const addUser = ''; // Replace with your actual URL for form action
-
   return (
     <div className='max-w-sm mx-auto '>
       <form action={addUser} className='mb-5'>
+        <div className='mb-5'>
+          <label
+            htmlFor='fullname'
+            className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'
+          >
+            Username
+          </label>
+          <input
+            type='text'
+            placeholder='fullname'
+            name='fullname'
+            required
+            className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+          />
+        </div>
         <div className='mb-5'>
           <label
             htmlFor='username'
@@ -53,21 +67,6 @@ const AddUser: React.FC = () => {
         </div>
         <div className='mb-5'>
           <label
-            htmlFor='phone'
-            className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'
-          >
-            Phone
-          </label>
-          <input
-            type='tel'
-            placeholder='phone'
-            name='phone'
-            required
-            className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
-          />
-        </div>
-        <div className='mb-5'>
-          <label
             htmlFor='role'
             className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'
           >
@@ -84,7 +83,7 @@ const AddUser: React.FC = () => {
             <option value={'Student'}>Student</option>
           </select>
         </div>
-        <div className='mb-5'>
+        {/*  <div className='mb-5'>
           <label
             htmlFor='isActive'
             className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'
@@ -101,21 +100,21 @@ const AddUser: React.FC = () => {
             <option value={'Yes'}>Yes</option>
             <option value={'No'}>No</option>
           </select>
-        </div>
+        </div> */}
         <div className='mb-5'>
           <label
-            htmlFor='info'
+            htmlFor='desc'
             className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'
           >
-            Info om eleven
+            Desc
           </label>
           <textarea
-            name='info'
-            id='info'
-            rows={16}
-            placeholder='Info'
+            rows={5}
+            placeholder='desc'
+            name='desc'
+            required
             className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
-          ></textarea>
+          />
         </div>
         <button
           type='submit'
