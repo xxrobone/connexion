@@ -80,7 +80,7 @@ const Users = async ({ searchParams }: UsersProps) => {
       <UsersList>
         {users ? (
           users.map(
-            ({ username, email, createdAt, role, profileImg }, index) => (
+            ({ username, email, createdAt, role, profileImg, _id }, index) => (
               <UserItem
                 key={index}
                 username={username}
@@ -88,6 +88,7 @@ const Users = async ({ searchParams }: UsersProps) => {
                 createdAt={createdAt}
                 role={role}
                 profileImg={profileImg}
+                id={_id}
               />
             ),
           )

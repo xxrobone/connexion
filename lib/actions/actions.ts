@@ -5,6 +5,8 @@ import User from '../models/User';
 import bcrypt from "bcrypt";
 import { connectToDB } from '../utils';
 
+
+// ADD USER - (POST)
 export const addUser = async (formData: FormData) => {
   const { fullname, username, email, password, role, desc } =
     Object.fromEntries(formData);
@@ -39,4 +41,20 @@ export const addUser = async (formData: FormData) => {
 
   revalidatePath("/dashboard/users");
   redirect("/dashboard/users");
+};
+
+// DELETE USER (DELETE)
+export const deleteUser = async (formData: FormData) => {
+  const { id } = Object.fromEntries(formData);
+
+  try {
+    connectToDB();
+    await User.findByIdAndDelete(id);
+    console.log('User with the id:', id + ' was deleted succcessfully')
+  } catch (err) {
+    console.log(err);
+    throw new Error("Failed to delete user!");
+  }
+
+  revalidatePath("/dashboard/products");
 };

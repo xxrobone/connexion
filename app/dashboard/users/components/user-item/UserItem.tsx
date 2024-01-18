@@ -5,6 +5,7 @@ import CustomLink from '@/components/ui/custom-link/CustomLink';
 import React from 'react';
 import { VscTrash } from 'react-icons/vsc';
 import { CgProfile } from 'react-icons/cg';
+import { deleteUser } from '@/lib/actions/actions';
 
 interface UserItemProps {
   username: string;
@@ -12,6 +13,7 @@ interface UserItemProps {
   createdAt: Date;
   role: string;
   profileImg: string;
+  id: string;
 }
 
 const UserItem = ({
@@ -20,7 +22,14 @@ const UserItem = ({
   createdAt,
   role,
   profileImg,
+  id,
 }: UserItemProps) => {
+  // converting the Id to string to not have warnings
+  //Warning: Only plain objects can be passed to Client Components from Server Components. Objects with toJSON methods are not supported. Convert it manually to a simple value before passing it to props.
+
+  const userId = id.toString();
+  console.log('user id:', userId);
+
   const formattedDate = createdAt?.toString().slice(4, 16);
   return (
     <tr>
@@ -39,16 +48,15 @@ const UserItem = ({
       </td>
       <td className='px-6 py-4 hover:bg-zinc-800 cursor-pointer'>{role}</td>
       <td className='px-6 py-4 cursor-pointer  hover:bg-[#dddddd] border-b-2 grid place-content-center'>
-        <CustomLink
-          href=''
-          title='VIEW'
-          className='text-black'
-        />
+        <CustomLink href='' title='VIEW' className='text-black' />
       </td>
       <td className='px-6 py-4 cursor-pointer'>
-        <Button tone='danger' size='md'>
-          <VscTrash className='text-black' />
-        </Button>
+        <form action={deleteUser}>
+          <input type='hidden' name='id' value={userId} />
+          <Button tone='danger' size='md'>
+            <VscTrash className='text-black' />
+          </Button>
+        </form>
       </td>
     </tr>
   );

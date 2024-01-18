@@ -15,7 +15,7 @@ const Pagination = ({ count }: PaginationProps) => {
   const page = searchParams.get('page') || '1';
 
   const params = new URLSearchParams(searchParams);
-  const ITEMS_LIMIT = 2;
+  const ITEMS_LIMIT = 5;
 
   const hasPrev = ITEMS_LIMIT * (parseInt(page) - 1) > 0;
   const hasNext = ITEMS_LIMIT * (parseInt(page) - 1) + ITEMS_LIMIT < count;
@@ -33,16 +33,16 @@ const Pagination = ({ count }: PaginationProps) => {
   };
 
   return (
-    <div className='relative flex p-2 justify-between disabled:bg-gray-400 disabled:cursor-not-allowed'>
+    <div className='relative flex p-2 justify-between'>
       <button
-        className='py-1 px-3 disabled:bg-gray-400 disabled:cursor-not-allowed'
+        className='py-1 px-3 disabled:bg-gray-600 disabled:cursor-not-allowed disabled:hover:border-red-400 border-transparent bg-white rounded-md hover:border-gray-100 border-2'
         disabled={!hasPrev}
         onClick={() => handleChangePage('prev')}
       >
         Previous
       </button>
       <button
-        className='py-1 px-3 disabled:bg-gray-400 disabled:cursor-not-allowed'
+        className='py-1 px-3 disabled:bg-gray-600 disabled:cursor-not-allowed disabled:hover:border-red-400 border-transparent bg-white rounded-md hover:border-gray-100 border-2'
         disabled={!hasNext}
         onClick={() => handleChangePage('next')}
       >
