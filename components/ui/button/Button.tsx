@@ -9,15 +9,19 @@ type ButtonProps = {
   isLoading?: boolean;
 };
 
+// button props key string or undefinded
 type ButtonPropsKey = string | undefined;
 
+// button props extended by lookupObject takes two parameters U and T
+// default value for U is set to string
+// creating an object where the keys can not be undefined
 type LookupObject<T extends ButtonPropsKey, U = string> = Record<
   NonNullable<T>,
   U
 >;
 
 const baseClasses =
-  'font-semibold mx-1 lg:mx-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:hover:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-400 active:translate-y-px disabled:active:translate-y-0';
+  'font-semibold mx-2 lg:mx-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:hover:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-400 active:translate-y-px disabled:active:translate-y-0';
 
 const toneClasses: LookupObject<
   ButtonProps['tone'],
@@ -49,7 +53,7 @@ const toneClasses: LookupObject<
     light:
       'bg-green-200 text-green-900 hover:bg-green-300 focus-visible:ring-green-500',
     bordered:
-      'outline outline-1 outline-green-500 hover:bg-green-200 focus-visible:ring-green-500 dark:text-white dark:hover:text-black',
+      'group mx-3 px-2 text-sm font-medium uppercase text-primary-500 hover:text-white hover:bg-zinc-800 dark:hover:text-primary-400 font-alt transition-all duration-300 border-[1px] border-[#888]',
   },
 };
 
