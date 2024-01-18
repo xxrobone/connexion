@@ -5,6 +5,7 @@ import { fetchUsers } from '@/lib/data/userData';
 import UserItem from './components/user-item/UserItem';
 import SearchDashboard from '../components/ui/search-dashboard/SearchDashboard';
 import Pagination from '@/components/pagination/Pagination';
+import { Button } from '@/components/ui/button/Button';
 
 const mockData = [
   {
@@ -71,12 +72,9 @@ const Users = async ({ searchParams }: UsersProps) => {
      
       <div className='pl-20 pt-20 flex '>
         <SearchDashboard placeholder='search for users' /> 
-      <button
-      className='group mx-3 px-2 rounded-md text-sm font-medium uppercase text-primary-500 hover:text-white hover:bg-zinc-800 dark:hover:text-primary-400 font-alt transition-all duration-300 border-[1px] border-[#888]'
-    >
-      Elever år 1
-      <span className='block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-[#ff4040] opacity-50'></span>
-    </button>
+        <Button tone='alt' impact='bordered' shape='rounded'>Elever år 1</Button>
+        <Button tone='alt' impact='bordered' shape='rounded'>Elever år 2</Button>
+        <Button tone='alt' impact='bordered' shape='rounded'>Lärare</Button>
       </div>
       <UsersList>
         {users ? (

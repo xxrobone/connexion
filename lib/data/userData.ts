@@ -1,4 +1,5 @@
 import User from "../models/User";
+import ClassModel from "../models/Class";
 import {connectToDB} from '../utils'
 
 // FETCH USERS
@@ -32,14 +33,26 @@ export const fetchUser = async (id: string) => {
     }
 };
 
-export const fetchStudents = async (classId: string, page:string) => {
+export const getStudentsByClass = async (classId: string, page:string) => {
   
   const LIMIT_ITEMS = 5
     try {
       connectToDB()
       // similar to what I leanred from Staffan Enberg getting all posts but now use it to get all users
-      const count = await User.countDocuments()
-        const students = await User.find({ courseName: {classId } }).limit(LIMIT_ITEMS).skip(LIMIT_ITEMS * (parseInt(page) - 1))
+      const classObj = await ClassModel.findOne({ courseName: classId });
+    if (!classObj) {
+      throw new Error('Class not found');
+    }
+      const count = await User.countDocuments({
+      'classes.classId': classObj.courseName,
+      role: 'Student',
+    })
+    // Get students in the class
+    const students = await User.find({
+      'classes.classId': classObj.courseName,
+      role: 'Student',
+    }).limit(LIMIT_ITEMS).skip(LIMIT_ITEMS * (parseInt(page) - 1));
+       /*  const students = await User.find({ courseName: {classId } }).limit(LIMIT_ITEMS).skip(LIMIT_ITEMS * (parseInt(page) - 1)) */
       return { count, students };
     } catch (err) {
         console.log(err)

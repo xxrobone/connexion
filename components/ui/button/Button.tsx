@@ -64,9 +64,9 @@ const shapeClasses: LookupObject<ButtonProps['shape']> = {
 };
 
 const sizeClasses: Record<NonNullable<ButtonProps['size']>, string> = {
-  sm: 'py-1 px-3 text-sm',
-  md: 'px-4 py-2 text-sm',
-  lg: 'px-8 py-4 text-base',
+  sm: 'px-3 text-sm',
+  md: 'px-3 py-1 text-sm',
+  lg: 'px-8 py-3 text-base',
 };
 
 const loadingClasses =
@@ -103,3 +103,6 @@ export const Button = ({
     </button>
   );
 };
+
+// will create an underline version with hover effect
+// <span className='block max-w-0 group-hover:max-w-full transition-all duration-500 h-[1px] bg-[#ff4040] opacity-50'></span>
