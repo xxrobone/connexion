@@ -1,26 +1,48 @@
-- [ ] Header
-- [ ] Footer
-- [ ] Sidebar
+- [x] Header
+- [x] Footer
+- [x] Sidebar
 - [ ] Sign-up
 - [ ] Sign-out
 - [ ] 
 
 - [ ] Create landing page
 
-- [ ] Create admin dashboard
+- [ ] Create admin dashboard - ongoing
 
-- [ ] Crud add teachers - students 
+- [ ] Create Models
+    - [x] User model
+    - [x] Class model
+    - [ ] Post model
+    - [ ] Likes model
+    - [ ] Comment model
+    - [ ] Notes model
+
+- [x] Crud add teachers - students 
+
+- [x] Crud delete teachers - students 
+
+- [x] Crud delete teachers - students 
 
 - [ ] User lists / Teachers - Students
 
-- [ ] Create student dashboard
+- [ ] Create student page
 
-- [ ] Create teacher dashboard
+- [ ] Create teacher page
 
 - [ ] Create routes depending on role and class
 
 - [ ] Create Posts functionality
+    - [ ] Create
+    - [ ] Delete
+    - [ ] Update
 
-- [ ] Create notes functionality
+- [ ] Create Notes functionality
+    - [ ] Create
+    - [ ] Delete
+    - [ ] Update
 
-- [ ] Create News functionality 
+
+- [ ] Create Admin News functionality  
+    - [ ] Create
+    - [ ] Delete
+    - [ ] Update

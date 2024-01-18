@@ -50,7 +50,7 @@ export const deleteUser = async (formData: FormData) => {
   try {
     connectToDB();
     await User.findByIdAndDelete(id);
-    console.log('User with the id:', id + ' was deleted succcessfully')
+    console.log('User with the id: ' + id + ' was deleted succcessfully')
   } catch (err) {
     console.log(err);
     throw new Error("Failed to delete user!");
