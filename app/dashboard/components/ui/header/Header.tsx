@@ -18,10 +18,10 @@ const Header = () => {
         <div className='flex lg:order-1 max-sm:ml-auto'>
           <SearchBar />
           <div className='relative'>
-            <Button size='sm' impact='bordered' shape='square'>
+            <Button size='sm' impact='bordered' shape='rounded'>
               Login
             </Button>
-            <Button size='sm' impact='bordered' shape='square'>
+            <Button size='sm' impact='bordered' shape='rounded'>
               SignUp
             </Button>
           </div>
