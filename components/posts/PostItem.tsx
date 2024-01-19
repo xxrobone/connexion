@@ -1,16 +1,38 @@
 import React from 'react';
 import Tag from '../ui/tag/Tag';
+import { Button } from '../ui/button/Button';
+import { VscTrash } from 'react-icons/vsc';
+import { deletePost } from '@/lib/actions/postActions';
 
 interface PostItemProps {
   date: string;
   title: string;
   tags: string[];
-  desc: string;
+  body: string;
+  id: string
+  author: {
+    _id: string;
+    username: string
+}
 }
 
-const PostItem: React.FC<PostItemProps> = ({ date, title, tags, desc }) => {
+const PostItem: React.FC<PostItemProps> = ({ date, title, tags, body, id, author }) => {
+
+  const postId = id;
+  console.log('post id:', postId);
+  console.log('author', author.username)
+
   return (
     <div className='py-5'>
+      <header>
+        <h2 className='text-sm font-semibold underline'>- {author.username} </h2>
+        <form action={deletePost}>
+          <input type='hidden' name='id' value={postId} />
+          <Button tone='danger' size='md'>
+            <VscTrash className='text-black' />
+          </Button>
+        </form>
+      </header>
       <article className='flex flex-col space-y-2 xl:space-y-0'>
         <dl>
           <dt className='sr-only'>Published on</dt>
@@ -43,7 +65,7 @@ const PostItem: React.FC<PostItemProps> = ({ date, title, tags, desc }) => {
             </div>
           </div>
           <div className='prose max-w-none text-gray-500 dark:text-gray-600'>
-            {desc}
+            {body}
           </div>
         </div>
       </article>

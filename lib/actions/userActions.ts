@@ -29,7 +29,6 @@ export const addUser = async (formData: FormData) => {
       email,
       password: hashedPassword,
       role,
-      confirmed: addConfirmed,
       desc,
     });
     await newUser.save();

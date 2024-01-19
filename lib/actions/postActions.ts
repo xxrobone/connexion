@@ -13,7 +13,7 @@ export const addPost = async (formData: FormData) => {
 
     // creating the new user
     const newPost = new Post({
-        title, link, body
+        title, link, body, author: '65aa7da09c5e3a69c5895534'
     });
     await newPost.save();
   } catch (err) {
@@ -21,8 +21,8 @@ export const addPost = async (formData: FormData) => {
     throw new Error('Failed to create post');
   }
 
-  revalidatePath('/dashboard/users');
-  redirect('/dashboard/users');
+  revalidatePath('/dashboard/posts');
+  redirect('/dashboard/posts');
 };
 
 // DELETE USER (DELETE)

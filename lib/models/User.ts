@@ -6,14 +6,12 @@ interface IUser extends Document {
   username: string;
   email: string;
   password: string;
-  profileImg?: string;
+  image?: string;
     role: 'Admin' | 'Teacher' | 'Student';
     desc: string;
-  confirmed: Boolean;
   fullname?: string;
   createdAt: Date;
   updatedAt: Date;
-  inviteCode?: string;
   classes?: {
     classId: string;
     startYear: number;
@@ -46,16 +44,7 @@ const UserSchema = new Schema<IUser>(
       required: true,
       select: false,
     },
-    confirmed: {
-      type: Boolean,
-      default: false,
-      required: true,
-    },
-    /* inviteCode: {
-      type: String,
-      required: false,
-    }, */
-    profileImg: {
+    image: {
       type: String,
       default: '',
       required: false,
