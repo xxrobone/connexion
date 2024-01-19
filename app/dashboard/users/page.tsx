@@ -1,7 +1,12 @@
 import React from 'react';
 import UsersList from './components/users-list/UsersList';
 import AddUser from './add/page';
-import { fetchUsers, getStudents, getStudentsByClass, getTeachers } from '@/lib/data/userData';
+import {
+  fetchUsers,
+  getStudents,
+  getStudentsByClass,
+  getTeachers,
+} from '@/lib/data/userData';
 import UserItem from './components/user-item/UserItem';
 import SearchDashboard from '../components/ui/search-dashboard/SearchDashboard';
 import Pagination from '@/components/pagination/Pagination';
@@ -59,7 +64,6 @@ interface UsersProps {
   };
 }
 
-
 const Users = async ({ searchParams }: UsersProps) => {
   const q = searchParams?.q || '';
   const page = searchParams?.page || '1';
@@ -69,13 +73,40 @@ const Users = async ({ searchParams }: UsersProps) => {
   /* console.log(users); */
   return (
     <div className='h-full bg-gray-800 relative'>
-     
       <div className='pl-20 pt-20 flex '>
         <SearchDashboard placeholder='search for users' />
-        <Button tone='alt' impact='bordered' shape='rounded' className='text-white font-thin'>Alla Elever</Button>
-        <Button tone='alt' impact='bordered' shape='rounded' className='text-white font-thin'>Elever år 1</Button>
-        <Button tone='alt' impact='bordered' shape='rounded' className='text-white font-thin'>Elever år 2</Button>
-        <Button tone='alt' impact='bordered' shape='rounded' className='text-white font-thin'>Lärare</Button>
+        <Button
+          tone='alt'
+          impact='bordered'
+          shape='rounded'
+          className='text-white font-thin'
+        >
+          Alla Elever
+        </Button>
+        <Button
+          tone='alt'
+          impact='bordered'
+          shape='rounded'
+          className='text-white font-thin'
+        >
+          Elever år 1
+        </Button>
+        <Button
+          tone='alt'
+          impact='bordered'
+          shape='rounded'
+          className='text-white font-thin'
+        >
+          Elever år 2
+        </Button>
+        <Button
+          tone='alt'
+          impact='bordered'
+          shape='rounded'
+          className='text-white font-thin'
+        >
+          Lärare
+        </Button>
       </div>
       <UsersList>
         {users ? (
@@ -88,7 +119,8 @@ const Users = async ({ searchParams }: UsersProps) => {
                 createdAt={createdAt}
                 role={role}
                 profileImg={profileImg}
-                id={_id}
+                /* Converting the id here... to get rid of warnings */
+                id={_id.toString()}
               />
             ),
           )

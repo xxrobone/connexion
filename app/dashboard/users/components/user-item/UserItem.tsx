@@ -27,7 +27,7 @@ const UserItem = ({
   // converting the Id to string to not have warnings
   //Warning: Only plain objects can be passed to Client Components from Server Components. Objects with toJSON methods are not supported. Convert it manually to a simple value before passing it to props.
 
-  const userId = id.toString();
+  const userId = id;
   console.log('user id:', userId);
 
   const formattedDate = createdAt?.toString().slice(4, 16);

@@ -3,7 +3,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import User from '../models/User';
 import bcrypt from "bcrypt";
-import { connectToDB } from '../utils';
+import { connectToDB } from "../db";
 
 
 // ADD USER - (POST)

@@ -1,6 +1,6 @@
 import User from "../models/User";
 import ClassModel from "../models/Class";
-import {connectToDB} from '../utils'
+import { connectToDB } from "../db";
 
 // GET USERS
 export const fetchUsers = async (q: string, page:string) => {
