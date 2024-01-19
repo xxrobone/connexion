@@ -18,7 +18,7 @@ const Input = ({
   handleChange,
 }: InputFieldType) => {
   return (
-    <div className='flex gap-2 border-none bg-transparent outline-none w-full'>
+    <div className='flex gap-2 bg-transparent outline-none w-full my-2 border-b-[1px] border-[#888]'>
       <label htmlFor={htmlFor}></label>
       <input
         className='focus:outline-none bg-transparent'
