@@ -1,17 +1,16 @@
-"use server"
-import { revalidatePath } from "next/cache";
-import { redirect } from "next/navigation";
+'use server';
+import { revalidatePath } from 'next/cache';
+import { redirect } from 'next/navigation';
 import User from '../models/User';
-import bcrypt from "bcrypt";
-import { connectToDB } from "../db";
+import bcrypt from 'bcrypt';
+import { connectToDB } from '../db';
 
-
-// ADD USER - (POST)
+// ADD USER
 export const addUser = async (formData: FormData) => {
   const { fullname, username, email, password, role, desc } =
     Object.fromEntries(formData);
   // if admin adds student no need for email confirmation
-  const addConfirmed = true
+  const addConfirmed = true;
 
   try {
     connectToDB();
@@ -19,7 +18,7 @@ export const addUser = async (formData: FormData) => {
     // extracting the password as a string from the formdata
     const extractedPassword: string = password as string;
 
-    // adding the hashed password 
+    // adding the hashed password
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(extractedPassword, salt);
 
@@ -28,10 +27,10 @@ export const addUser = async (formData: FormData) => {
       fullname,
       username,
       email,
-       password: hashedPassword,
+      password: hashedPassword,
       role,
       confirmed: addConfirmed,
-      desc
+      desc,
     });
     await newUser.save();
   } catch (err) {
@@ -39,8 +38,8 @@ export const addUser = async (formData: FormData) => {
     throw new Error('Failed to create user');
   }
 
-  revalidatePath("/dashboard/users");
-  redirect("/dashboard/users");
+  revalidatePath('/dashboard/users');
+  redirect('/dashboard/users');
 };
 
 // DELETE USER (DELETE)
@@ -50,11 +49,11 @@ export const deleteUser = async (formData: FormData) => {
   try {
     connectToDB();
     await User.findByIdAndDelete(id);
-    console.log('User with the id:', id + ' was deleted succcessfully')
+    console.log('User with the id:', id + ' was deleted succcessfully');
   } catch (err) {
     console.log(err);
-    throw new Error("Failed to delete user!");
+    throw new Error('Failed to delete user!');
   }
 
-  revalidatePath("/dashboard/products");
+  revalidatePath('/dashboard/products');
 };

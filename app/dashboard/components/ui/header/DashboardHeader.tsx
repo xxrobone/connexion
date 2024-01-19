@@ -7,8 +7,8 @@ const DashboardHeader = () => {
   return (
     <header className='w-full shadow-md pl-0 pr-4 sm:pr-10 bg-black font-[sans-serif] h-fit flex justify-between'>
       <div className='flex items-center justify-between gap-5 relative w-full'>    
-          <SearchDashboard />          
-            <Button tone='alt' shape='square'>Lägg till +</Button>
+                   
+            <Button tone='alt' shape='square' className='font-thin'>Lägg till +</Button>
         </div>
     </header>
   );

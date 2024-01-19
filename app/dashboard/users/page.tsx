@@ -2,10 +2,7 @@ import React from 'react';
 import UsersList from './components/users-list/UsersList';
 import AddUser from './add/page';
 import {
-  fetchUsers,
-  getStudents,
-  getStudentsByClass,
-  getTeachers,
+  fetchUsers
 } from '@/lib/data/userData';
 import UserItem from './components/user-item/UserItem';
 import SearchDashboard from '../components/ui/search-dashboard/SearchDashboard';

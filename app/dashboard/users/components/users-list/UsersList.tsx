@@ -13,7 +13,7 @@ const UsersList = ({ children }: UserListProps) => {
           <tr>
             <th scope='col' className='px-6 py-3'>
               Name
-            </th>
+            </th> 
             <th scope='col' className='px-6 py-3'>
               Email
             </th>

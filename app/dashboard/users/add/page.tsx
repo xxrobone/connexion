@@ -1,5 +1,5 @@
 import React from 'react';
-import { addUser } from '@/lib/actions/actions';
+import { addUser } from '@/lib/actions/userActions';
 
 const AddUser: React.FC = () => {
   return (

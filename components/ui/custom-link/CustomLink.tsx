@@ -10,17 +10,15 @@ const CustomLink = (props: ComponentProps<typeof Link>) => {
       {...props}
       className={cn(
         props.className,
-        `group lg:hover:text-[#888] text-[#f8f8f8] max-lg:text-white border-transparent font-semibold text-[15px] px-4 py-2 transition-all duration-300 ease-in-out block w-fit`,
+        `group relative hover:text-[#ffffff] text-[#dfdfdf] border-transparent font-semibold text-[15px] px-4 py-2 transition-all duration-300 ease-in-out block min-w-fit drop-shadow-md`,
       )}
       href={props.href}
     >
-      <span className='flex items-center'>
+      <span className='flex items-center min-w-full'>
         {props.children}
-        <span className='mx-2'>
-      {props.title}
-        </span>
-        </span>
-     
+        <span className='mx-2'>{props.title}</span>
+      </span>
+
       <span className='block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-[#ff4040]'></span>
     </Link>
   );

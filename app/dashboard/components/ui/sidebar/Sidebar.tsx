@@ -1,8 +1,9 @@
 import React from 'react';
 import CustomLink from '@/components/ui/custom-link/CustomLink';
-import { MdDashboard, MdSupervisedUserCircle, MdPersonAddAlt } from 'react-icons/md'
+import { MdDashboard, MdSupervisedUserCircle, MdPersonAddAlt, MdPostAdd } from 'react-icons/md'
 import { PiStudent } from "react-icons/pi";
 import { FaUserTie } from "react-icons/fa6";
+import { TiDocumentText } from "react-icons/ti";
 
 interface SidebarMenuItem {
   href: string;
@@ -18,7 +19,7 @@ const SidebarMenuItems: SidebarMenuItem[] = [
   },
   {
     href: '/dashboard/users',
-    title: 'Users',
+    title: 'Användare',
     icon: <MdSupervisedUserCircle />,
   },
   {
@@ -46,13 +47,23 @@ const SidebarMenuItems: SidebarMenuItem[] = [
     title: 'Lägg till',
     icon: <MdPersonAddAlt />,
   },
+  {
+    href: '/dashboard/posts',
+    title: 'Inlägg',
+    icon: <TiDocumentText />,
+  },
+  {
+    href: '/dashboard/posts/add',
+    title: 'Nytt inlägg',
+    icon: <MdPostAdd />,
+  },
 ]
 
 const Sidebar = () => {
   return (
-    <div className='relative w-fit h-full bg-black shadow flex-col items-center justify-center pt-[20vh] px-2 border-r-4 border-[red]'>
+    <div className='relative w-full h-full bg-black shadow flex-col items-center justify-center pt-[20vh] px-2 border-r-4 border-[red]'>
       {SidebarMenuItems.map(({ href, title, icon }) => (
-        <CustomLink key={title} href={href} title={title}>{icon}</CustomLink>
+        <CustomLink key={title} href={href} title={title} className='text-sm font-thin'>{icon}</CustomLink>
       ) )}
     </div>
   );

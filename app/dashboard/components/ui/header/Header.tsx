@@ -10,7 +10,7 @@ const Header = () => {
     <header className='w-full shadow-md pl-0 pr-4 sm:pr-10 bg-black font-[sans-serif] h-[60px] flex justify-between'>
       <CustomLink
         href='/'
-        className='font-bold bg-[red] h-full w-fit px-8 grid place-content-center text-white'
+        className='font-bold bg-[red] h-full w-fit px-8 grid place-content-center text-white tracking-wide'
       >
         Danscenter Fryshuset
       </CustomLink>
@@ -18,10 +18,10 @@ const Header = () => {
         <div className='flex lg:order-1 max-sm:ml-auto'>
           <SearchBar />
           <div className='relative'>
-            <Button size='sm' impact='bordered' shape='rounded'>
+            <Button size='md' impact='bordered' shape='rounded' className='font-thin'>
               Login
             </Button>
-            <Button size='sm' impact='bordered' shape='rounded'>
+            <Button size='md' impact='bordered' shape='rounded' className='font-thin'>
               SignUp
             </Button>
           </div>
